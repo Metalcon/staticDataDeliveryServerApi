@@ -12,6 +12,11 @@ public class SddReadRequest extends SddRequest {
             long id,
             String detail) {
         super();
+
+        if (detail == null) {
+            throw new IllegalArgumentException("detail was null");
+        }
+
         this.id = id;
         this.detail = detail;
     }

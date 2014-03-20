@@ -17,6 +17,14 @@ public class SddUpdateRequest extends SddRequest {
             String type,
             Map<String, String> attrs) {
         super();
+
+        if (type == null) {
+            throw new IllegalArgumentException("type was null");
+        }
+        if (attrs == null) {
+            throw new IllegalArgumentException("attrs were null");
+        }
+
         this.id = id;
         this.type = type;
         this.attrs = attrs;
