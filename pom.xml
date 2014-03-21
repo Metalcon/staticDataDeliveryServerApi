@@ -42,6 +42,7 @@
   
   <properties>
     <metalcon.api.version>0.1.0</metalcon.api.version>
+    <metalcon.muid.version>0.1.0-SNAPSHOT</metalcon.muid.version>
   </properties>
   
   <dependencies>
@@ -49,6 +50,11 @@
       <groupId>de.metalcon</groupId>
       <artifactId>api</artifactId>
       <version>${metalcon.api.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>de.metalcon</groupId>
+      <artifactId>muid</artifactId>
+      <version>${metalcon.muid.version}</version>
     </dependency>
   </dependencies>
 </project>
