@@ -39,4 +39,16 @@
       <url>http://metalcon2.physik.uni-mainz.de:8080/mvn/</url>
     </repository>
   </repositories>
+  
+  <properties>
+    <metalcon.api.version>0.1.0</metalcon.api.version>
+  </properties>
+  
+  <dependencies>
+    <dependency>
+      <groupId>de.metalcon</groupId>
+      <artifactId>api</artifactId>
+      <version>${metalcon.api.version}</version>
+    </dependency>
+  </dependencies>
 </project>
