@@ -26,9 +26,6 @@ public class SddWriteRequest extends SddRequest {
     public void delete(Muid nodeId) {
     }
 
-    public void deleteRelation(Muid nodeId, String relationType, Muid toId) {
-    }
-
     public void deleteRelations(
             Muid nodeId,
             String relationType,
