@@ -8,7 +8,7 @@ public class SddReadRequest extends SddRequest {
 
     // TODO: switch String detail to enum?
 
-    public void read(Muid id, String detail) {
+    public void read(Muid nodeId, String detail) {
     }
 
 }
