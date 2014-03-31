@@ -10,10 +10,10 @@
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>staticDataDeliveryApi</artifactId>
-  <version>0.0.2</version>
+  <artifactId>static-data-delivery-server-api</artifactId>
+  <version>0.0.3</version>
   <packaging>jar</packaging>
-  
+
   <licenses>
     <license>
       <name>GNU General Public License 3.0</name>
@@ -32,19 +32,19 @@
       </roles>
     </developer>
   </developers>
-  
+
   <repositories>
     <repository>
       <id>metalcon-depend</id>
       <url>http://develop.metalcon.de:8080/mvn/</url>
     </repository>
   </repositories>
-  
+
   <properties>
     <metalcon.api.version>0.1.0</metalcon.api.version>
     <metalcon.muid.version>0.1.0-SNAPSHOT</metalcon.muid.version>
   </properties>
-  
+
   <dependencies>
     <dependency>
       <groupId>de.metalcon</groupId>
