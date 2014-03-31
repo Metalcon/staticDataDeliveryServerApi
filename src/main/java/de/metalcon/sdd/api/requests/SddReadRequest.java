@@ -1,32 +1,26 @@
 package de.metalcon.sdd.api.requests;
 
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+
+import de.metalcon.domain.Muid;
+
 public class SddReadRequest extends SddRequest {
 
     private static final long serialVersionUID = 5917412654438148252L;
 
-    private long id;
+    private List<ReadRequestAction> actions =
+            new LinkedList<ReadRequestAction>();
 
-    private String detail;
+    // TODO: switch String detail to enum?
 
-    public SddReadRequest(
-            long id,
-            String detail) {
-        super();
-
-        if (detail == null) {
-            throw new IllegalArgumentException("detail was null");
-        }
-
-        this.id = id;
-        this.detail = detail;
+    public void read(Muid nodeId, String detail) {
+        actions.add(new ReadRequestAction(nodeId.getValue(), detail));
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public String getDetail() {
-        return detail;
+    public List<ReadRequestAction> getActions() {
+        return Collections.unmodifiableList(actions);
     }
 
 }
