@@ -8,14 +8,17 @@ public class SetRelationsAction extends WriteRequestAction {
 
     private static final long serialVersionUID = 8619946426392098991L;
 
-    private Muid nodeId;
+    private long nodeId;
+
+    private String nodeType;
 
     private String relation;
 
     private List<Muid> toIds;
 
     /* pacakge */SetRelationsAction(
-            Muid nodeId,
+            long nodeId,
+            String nodeType,
             String relation,
             List<Muid> toIds) {
         super();
@@ -24,8 +27,12 @@ public class SetRelationsAction extends WriteRequestAction {
         this.toIds = toIds;
     }
 
-    public Muid getNodeId() {
+    public long getNodeId() {
         return nodeId;
+    }
+
+    public String getNodeType() {
+        return nodeType;
     }
 
     public String getRelation() {

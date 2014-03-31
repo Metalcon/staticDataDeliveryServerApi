@@ -8,24 +8,32 @@ public class DeleteRelationsAction extends WriteRequestAction {
 
     private static final long serialVersionUID = -2242750141305900557L;
 
-    private Muid nodeId;
+    private long nodeId;
+
+    private String nodeType;
 
     private String relation;
 
     private List<Muid> toIds;
 
     /* packge */DeleteRelationsAction(
-            Muid nodeId,
+            long nodeId,
+            String nodeType,
             String relation,
             List<Muid> toIds) {
         super();
         this.nodeId = nodeId;
+        this.nodeType = nodeType;
         this.relation = relation;
         this.toIds = toIds;
     }
 
-    public Muid getNodeId() {
+    public long getNodeId() {
         return nodeId;
+    }
+
+    public String getNodeType() {
+        return nodeType;
     }
 
     public String getRelation() {

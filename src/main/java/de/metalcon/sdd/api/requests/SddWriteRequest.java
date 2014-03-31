@@ -15,27 +15,32 @@ public class SddWriteRequest extends SddRequest {
             new LinkedList<WriteRequestAction>();
 
     public void setProperties(Muid nodeId, Map<String, String> properties) {
-        actions.add(new SetPropertiesAction(nodeId, properties));
+        actions.add(new SetPropertiesAction(nodeId.getValue(), nodeId
+                .getMuidType().getIdentifier(), properties));
     }
 
     public void setRelation(Muid nodeId, String relation, Muid toId) {
-        actions.add(new SetRelationAction(nodeId, relation, toId));
+        actions.add(new SetRelationAction(nodeId.getValue(), nodeId
+                .getMuidType().getIdentifier(), relation, toId));
     }
 
     public void setRelations(Muid nodeId, String relation, List<Muid> toIds) {
-        actions.add(new SetRelationsAction(nodeId, relation, toIds));
+        actions.add(new SetRelationsAction(nodeId.getValue(), nodeId
+                .getMuidType().getIdentifier(), relation, toIds));
     }
 
     public void addRelations(Muid nodeId, String relation, List<Muid> toIds) {
-        actions.add(new AddRelationsAction(nodeId, relation, toIds));
+        actions.add(new AddRelationsAction(nodeId.getValue(), nodeId
+                .getMuidType().getIdentifier(), relation, toIds));
     }
 
     public void delete(Muid nodeId) {
-        actions.add(new DeleteAction(nodeId));
+        actions.add(new DeleteAction(nodeId.getValue()));
     }
 
     public void deleteRelations(Muid nodeId, String relation, List<Muid> toIds) {
-        actions.add(new DeleteRelationsAction(nodeId, relation, toIds));
+        actions.add(new DeleteRelationsAction(nodeId.getValue(), nodeId
+                .getMuidType().getIdentifier(), relation, toIds));
     }
 
     public List<WriteRequestAction> getActions() {
