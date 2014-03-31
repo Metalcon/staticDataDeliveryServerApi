@@ -1,8 +1,5 @@
 package de.metalcon.sdd.api.requests;
 
-import java.util.List;
-
-import de.metalcon.domain.Muid;
 
 public class AddRelationsAction extends WriteRequestAction {
 
@@ -14,13 +11,13 @@ public class AddRelationsAction extends WriteRequestAction {
 
     private String relation;
 
-    private List<Muid> toIds;
+    private long[] toIds;
 
     /* package */AddRelationsAction(
             long nodeId,
             String nodeType,
             String relation,
-            List<Muid> toIds) {
+            long[] toIds) {
         super();
         this.nodeId = nodeId;
         this.nodeType = nodeType;
@@ -40,7 +37,7 @@ public class AddRelationsAction extends WriteRequestAction {
         return relation;
     }
 
-    public List<Muid> getToIds() {
+    public long[] getToIds() {
         return toIds;
     }
 

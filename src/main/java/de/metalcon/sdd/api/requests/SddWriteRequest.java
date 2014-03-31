@@ -21,17 +21,17 @@ public class SddWriteRequest extends SddRequest {
 
     public void setRelation(Muid nodeId, String relation, Muid toId) {
         actions.add(new SetRelationAction(nodeId.getValue(), nodeId
-                .getMuidType().getIdentifier(), relation, toId));
+                .getMuidType().getIdentifier(), relation, toId.getValue()));
     }
 
     public void setRelations(Muid nodeId, String relation, List<Muid> toIds) {
         actions.add(new SetRelationsAction(nodeId.getValue(), nodeId
-                .getMuidType().getIdentifier(), relation, toIds));
+                .getMuidType().getIdentifier(), relation, listToArray(toIds)));
     }
 
     public void addRelations(Muid nodeId, String relation, List<Muid> toIds) {
         actions.add(new AddRelationsAction(nodeId.getValue(), nodeId
-                .getMuidType().getIdentifier(), relation, toIds));
+                .getMuidType().getIdentifier(), relation, listToArray(toIds)));
     }
 
     public void delete(Muid nodeId) {
@@ -40,11 +40,21 @@ public class SddWriteRequest extends SddRequest {
 
     public void deleteRelations(Muid nodeId, String relation, List<Muid> toIds) {
         actions.add(new DeleteRelationsAction(nodeId.getValue(), nodeId
-                .getMuidType().getIdentifier(), relation, toIds));
+                .getMuidType().getIdentifier(), relation, listToArray(toIds)));
     }
 
     public List<WriteRequestAction> getActions() {
         return Collections.unmodifiableList(actions);
+    }
+
+    private static long[] listToArray(List<Muid> list) {
+        long[] array = new long[list.size()];
+        int i = 0;
+        for (Muid entry : list) {
+            array[i] = entry.getValue();
+            ++i;
+        }
+        return array;
     }
 
 }
