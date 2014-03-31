@@ -16,7 +16,7 @@ public class SddReadRequest extends SddRequest {
     // TODO: switch String detail to enum?
 
     public void read(Muid nodeId, String detail) {
-        actions.add(new ReadRequestAction(nodeId, detail));
+        actions.add(new ReadRequestAction(nodeId.getValue(), detail));
     }
 
     public List<ReadRequestAction> getActions() {
