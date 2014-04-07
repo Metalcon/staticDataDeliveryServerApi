@@ -42,7 +42,7 @@
 
   <properties>
     <metalcon.api.version>0.1.0</metalcon.api.version>
-    <metalcon.muid.version>0.1.0-SNAPSHOT</metalcon.muid.version>
+    <metalcon.muid.version>0.3.1</metalcon.muid.version>
   </properties>
 
   <dependencies>

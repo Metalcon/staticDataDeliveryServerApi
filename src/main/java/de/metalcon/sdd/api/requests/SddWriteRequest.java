@@ -15,23 +15,23 @@ public class SddWriteRequest extends SddRequest {
             new LinkedList<WriteRequestAction>();
 
     public void setProperties(Muid nodeId, Map<String, String> properties) {
-        actions.add(new SetPropertiesAction(nodeId.getValue(), nodeId
-                .getMuidType().getIdentifier(), properties));
+        actions.add(new SetPropertiesAction(nodeId.getValue(), nodeId.getType()
+                .getIdentifier(), properties));
     }
 
     public void setRelation(Muid nodeId, String relation, Muid toId) {
-        actions.add(new SetRelationAction(nodeId.getValue(), nodeId
-                .getMuidType().getIdentifier(), relation, toId.getValue()));
+        actions.add(new SetRelationAction(nodeId.getValue(), nodeId.getType()
+                .getIdentifier(), relation, toId.getValue()));
     }
 
     public void setRelations(Muid nodeId, String relation, List<Muid> toIds) {
-        actions.add(new SetRelationsAction(nodeId.getValue(), nodeId
-                .getMuidType().getIdentifier(), relation, listToArray(toIds)));
+        actions.add(new SetRelationsAction(nodeId.getValue(), nodeId.getType()
+                .getIdentifier(), relation, listToArray(toIds)));
     }
 
     public void addRelations(Muid nodeId, String relation, List<Muid> toIds) {
-        actions.add(new AddRelationsAction(nodeId.getValue(), nodeId
-                .getMuidType().getIdentifier(), relation, listToArray(toIds)));
+        actions.add(new AddRelationsAction(nodeId.getValue(), nodeId.getType()
+                .getIdentifier(), relation, listToArray(toIds)));
     }
 
     public void delete(Muid nodeId) {
@@ -40,7 +40,7 @@ public class SddWriteRequest extends SddRequest {
 
     public void deleteRelations(Muid nodeId, String relation, List<Muid> toIds) {
         actions.add(new DeleteRelationsAction(nodeId.getValue(), nodeId
-                .getMuidType().getIdentifier(), relation, listToArray(toIds)));
+                .getType().getIdentifier(), relation, listToArray(toIds)));
     }
 
     public List<WriteRequestAction> getActions() {

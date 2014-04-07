@@ -15,10 +15,11 @@ public class SddSucessfulReadResponse extends SuccessResponse {
             new HashMap<Muid, Map<String, String>>();
 
     public void add(long nodeId, String detail, String output) {
-        Map<String, String> nodeOutputs = outputs.get(new Muid(nodeId));
+        Map<String, String> nodeOutputs =
+                outputs.get(Muid.createFromID(nodeId));
         if (nodeOutputs == null) {
             nodeOutputs = new HashMap<String, String>();
-            outputs.put(new Muid(nodeId), nodeOutputs);
+            outputs.put(Muid.createFromID(nodeId), nodeOutputs);
         }
         nodeOutputs.put(detail, output);
     }
