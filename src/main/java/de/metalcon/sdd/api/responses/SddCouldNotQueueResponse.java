@@ -1,8 +1,6 @@
 package de.metalcon.sdd.api.responses;
 
-import de.metalcon.api.responses.SuccessResponse;
-
-public class SddCouldNotQueueResponse extends SuccessResponse {
+public class SddCouldNotQueueResponse extends SddResponse {
 
     private static final long serialVersionUID = -8856281553160944283L;
 

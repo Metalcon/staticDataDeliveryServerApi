@@ -4,10 +4,9 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import de.metalcon.api.responses.SuccessResponse;
 import de.metalcon.domain.Muid;
 
-public class SddSucessfulReadResponse extends SuccessResponse {
+public class SddSucessfulReadResponse extends SddResponse {
 
     private static final long serialVersionUID = -5596683508242175935L;
 
