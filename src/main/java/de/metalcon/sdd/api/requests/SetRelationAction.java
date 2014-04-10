@@ -1,6 +1,5 @@
 package de.metalcon.sdd.api.requests;
 
-
 public class SetRelationAction extends WriteRequestAction {
 
     private static final long serialVersionUID = -4792313824535983730L;
@@ -20,6 +19,7 @@ public class SetRelationAction extends WriteRequestAction {
             long toId) {
         super();
         this.nodeId = nodeId;
+        this.nodeType = nodeType;
         this.relation = relation;
         this.toId = toId;
     }
